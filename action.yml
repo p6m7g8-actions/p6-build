@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Github Workflow Lint
+    - name: GitHub Workflow Lint
       uses: p6m7g8-actions/p6-gh-action-linter@main
       with:
         gh_token: ${{ inputs.gh_token }}
