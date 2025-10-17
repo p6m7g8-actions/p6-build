@@ -13,4 +13,4 @@ runs:
     - name: Github Workflow Lint
       uses: p6m7g8-actions/p6-gh-action-linter@main
       with:
-        gh_token: ${{ secrets.GITHUB_TOKEN }}
+        gh_token: ${{ inputs.gh_token }}
