@@ -2,9 +2,15 @@ name: "P6 GHA: Build"
 description: "P6 GHA: Build"
 author: "Philip M. Gollucci"
 
+inputs:
+  gh_token:
+    description: "GitHub Token"
+    required: true
+
 runs:
   using: "composite"
   steps:
-    - name: Build
-      shell: bash
-      run: echo "This workflow intentionally does nothing and always passes."
+    - name: Github Workflow Lint
+      uses: p6m7g8-actions/p6-gh-action-linter@main
+      with:
+        gh_token: ${{ secrets.GITHUB_TOKEN }}
