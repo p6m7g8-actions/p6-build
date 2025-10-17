@@ -14,7 +14,12 @@ runs:
       uses: p6m7g8-actions/p6-gh-action-linter@main
       with:
         gh_token: ${{ inputs.gh_token }}
+
     - name: Markdown Lint
       uses: p6m7g8-actions/p6-gh-markdown-linter@main
+
     - name: ShellCheck
       uses: p6m7g8-actions/shellcheck@main
+
+    - name: Cspell
+      uses: p6m7g8-actions/cspell@main
