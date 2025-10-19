@@ -6,6 +6,10 @@ inputs:
   gh_token:
     description: "GitHub Token"
     required: true
+  shellcheck:
+    description: "Run shellcheck (true/false)"
+    required: false
+    default: "true"
 
 runs:
   using: "composite"
@@ -26,6 +30,8 @@ runs:
 
     - name: ShellCheck
       uses: p6m7g8-actions/shellcheck@main
+      with:
+        shellcheck: ${{ inputs.shellcheck }}
 
     - name: Cspell
       uses: p6m7g8-actions/cspell@main
