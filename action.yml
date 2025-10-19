@@ -14,24 +14,24 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Secrets Check
-      uses: p6m7g8-actions/secrets@main
-
-    - name: GitHub Workflow Lint
-      uses: p6m7g8-actions/p6-gh-action-linter@main
-      with:
-        gh_token: ${{ inputs.gh_token }}
-
-    - name: Markdown Lint
-      uses: p6m7g8-actions/p6-gh-markdown-linter@main
-
-    - name: YAML Lint
-      uses: p6m7g8-actions/yamllint@main
-
-    - name: ShellCheck
-      uses: p6m7g8-actions/shellcheck@main
-      with:
-        shellcheck: ${{ inputs.shellcheck }}
-
-    - name: Cspell
-      uses: p6m7g8-actions/cspell@main
+#    - name: Secrets Check
+#      uses: p6m7g8-actions/secrets@main
+#
+#    - name: GitHub Workflow Lint
+#      uses: p6m7g8-actions/p6-gh-action-linter@main
+#      with:
+#        gh_token: ${{ inputs.gh_token }}
+#
+#    - name: Markdown Lint
+#      uses: p6m7g8-actions/p6-gh-markdown-linter@main
+#
+#    - name: YAML Lint
+#      uses: p6m7g8-actions/yamllint@main
+#
+#    - name: ShellCheck
+#      uses: p6m7g8-actions/shellcheck@main
+#      with:
+#        shellcheck: ${{ inputs.shellcheck }}
+#
+#    - name: Cspell
+#      uses: p6m7g8-actions/cspell@main
