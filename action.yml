@@ -6,32 +6,61 @@ inputs:
   gh_token:
     description: "GitHub Token"
     required: true
+  actionlint:
+    description: "Run actionlint (true/false)"
+    required: false
+    default: "true"
+  cspell:
+    description: "Run cspell (true/false)"
+    required: false
+    default: "true"
+  markdownlint:
+    description: "Run markdownlint (true/false)"
+    required: false
+    default: "true"
+  secrets:
+    description: "Run secrets check (true/false)"
+    required: false
+    default: "true"
   shellcheck:
     description: "Run shellcheck (true/false)"
+    required: false
+    default: "true"
+  yamllint:
+    description: "Run yamllint (true/false)"
     required: false
     default: "true"
 
 runs:
   using: "composite"
   steps:
-#    - name: Secrets Check
-#      uses: p6m7g8-actions/secrets@main
-#
-#    - name: GitHub Workflow Lint
-#      uses: p6m7g8-actions/p6-gh-action-linter@main
-#      with:
-#        gh_token: ${{ inputs.gh_token }}
-#
-#    - name: Markdown Lint
-#      uses: p6m7g8-actions/p6-gh-markdown-linter@main
-#
-#    - name: YAML Lint
-#      uses: p6m7g8-actions/yamllint@main
-#
-#    - name: ShellCheck
-#      uses: p6m7g8-actions/shellcheck@main
-#      with:
-#        shellcheck: ${{ inputs.shellcheck }}
-#
-#    - name: Cspell
-#      uses: p6m7g8-actions/cspell@main
+    - name: Secrets Check
+      uses: p6m7g8-actions/secrets@main
+      with:
+        secrets: ${{ inputs.secrets }}
+
+    - name: GitHub Workflow Lint
+      uses: p6m7g8-actions/p6-gh-action-linter@main
+      with:
+        actionlint: ${{ inputs.actionlint }}
+        gh_token: ${{ inputs.gh_token }}
+
+    - name: Markdown Lint
+      uses: p6m7g8-actions/p6-gh-markdown-linter@main
+      with:
+        markdownlint: ${{ inputs.markdownlint }}
+
+    - name: YAML Lint
+      uses: p6m7g8-actions/yamllint@main
+      with:
+        yamllint: ${{ inputs.yamllint }}
+
+    - name: ShellCheck
+      uses: p6m7g8-actions/shellcheck@main
+      with:
+        shellcheck: ${{ inputs.shellcheck }}
+
+    - name: Cspell
+      uses: p6m7g8-actions/cspell@main
+      with:
+        cspell: ${{ inputs.cspell }}
