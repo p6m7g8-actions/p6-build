@@ -19,7 +19,7 @@ inputs:
     required: false
     default: "true"
   secrets:
-    description: "Comma separated list of secrets to check for"
+    description: "Run secrets check (true/false)"
     required: false
     default: "true"
   shellcheck:
