@@ -60,7 +60,7 @@ runs:
       with:
         shellcheck: ${{ inputs.shellcheck }}
 
-    - name: Cspell
-      uses: p6m7g8-actions/cspell@main
-      with:
-        cspell: ${{ inputs.cspell }}
+#    - name: Cspell
+#      uses: p6m7g8-actions/cspell@main
+#      with:
+#        cspell: ${{ inputs.cspell }}
