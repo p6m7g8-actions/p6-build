@@ -34,7 +34,10 @@ inputs:
 runs:
   using: "composite"
   steps:
-    # - name: Secrets Check
+    - name: Secrets Check
+      shell: bash
+      run: echo "true"
+  
     #   uses: p6m7g8-actions/secrets@main
     #   with:
     #     secrets: ${{ inputs.secrets }}
