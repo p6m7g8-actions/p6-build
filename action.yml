@@ -37,7 +37,7 @@ runs:
     - name: Secrets Check
       uses: p6m7g8-actions/secrets@main
       with:
-      	secrets: ${{ inputs.secrets }}
+        secrets: ${{ inputs.secrets }}
 
     - name: GitHub Workflow Lint
       uses: p6m7g8-actions/p6-gh-action-linter@main
