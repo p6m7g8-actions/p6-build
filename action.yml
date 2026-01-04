@@ -35,35 +35,32 @@ runs:
   using: "composite"
   steps:
     - name: Secrets Check
-      shell: bash
-      run: echo "true"
-  
-    #   uses: p6m7g8-actions/secrets@main
-    #   with:
-    #     secrets: ${{ inputs.secrets }}
+       uses: p6m7g8-actions/secrets@main
+       with:
+         secrets: ${{ inputs.secrets }}
 
-#    - name: GitHub Workflow Lint
-#      uses: p6m7g8-actions/p6-gh-action-linter@main
-#      with:
-#        actionlint: ${{ inputs.actionlint }}
-#        gh_token: ${{ inputs.gh_token }}
+    - name: GitHub Workflow Lint
+      uses: p6m7g8-actions/p6-gh-action-linter@main
+      with:
+        actionlint: ${{ inputs.actionlint }}
+        gh_token: ${{ inputs.gh_token }}
 
-#    - name: Markdown Lint
-#      uses: p6m7g8-actions/p6-gh-markdown-linter@main
-#      with:
-#        markdownlint: ${{ inputs.markdownlint }}
+    - name: Markdown Lint
+      uses: p6m7g8-actions/p6-gh-markdown-linter@main
+      with:
+        markdownlint: ${{ inputs.markdownlint }}
 
-#    - name: YAML Lint
-#      uses: p6m7g8-actions/yamllint@main
-#      with:
-#        yamllint: ${{ inputs.yamllint }}
+    - name: YAML Lint
+      uses: p6m7g8-actions/yamllint@main
+      with:
+        yamllint: ${{ inputs.yamllint }}
 
-#    - name: ShellCheck
-#      uses: p6m7g8-actions/shellcheck@main
-#      with:
-#        shellcheck: ${{ inputs.shellcheck }}
+    - name: ShellCheck
+      uses: p6m7g8-actions/shellcheck@main
+      with:
+        shellcheck: ${{ inputs.shellcheck }}
 
-#    - name: Cspell
-#      uses: p6m7g8-actions/cspell@main
-#      with:
-#        cspell: ${{ inputs.cspell }}
+    - name: Cspell
+      uses: p6m7g8-actions/cspell@main
+      with:
+        cspell: ${{ inputs.cspell }}
