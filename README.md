@@ -6,6 +6,6 @@
 ## Usage
 
 ```yaml
-      - name: Build
+      - name: P6- build
         uses: p6m7g8-actions/p6-build@main
 ```
